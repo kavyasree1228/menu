@@ -47,24 +47,8 @@
         ]
       },
       {
-        "name": "SANDWICHES",
+        "name": "HOT SANDWICHES",
         "items": [
-          {
-            "name": "Turkey & Avocado – with tomato",
-            "price": 7.95
-          },
-          {
-            "name": "Pub Club – turkey, bacon. lettuce, tomato",
-            "price": 9.25
-          },
-          {
-            "name": "Rare Roast Beef & Swiss – sweet-hot mustard, lettuce, red onion",
-            "price": 9.25
-          },
-          {
-            "name": "Veggie – pepper jack, avocado, sprout, tomato",
-            "price": 9.25
-          },
           {
             "name": "Southwest Chicken Breast Grilled Onion, Poblano Pepper, Tomato, Lettuce, Jack Cheese",
             "price": 9.50
@@ -96,6 +80,27 @@
           {
             "name": "Blackened Catfish Creole Peppers & Onions, Fresh Herb Aioli, Served on house made Sourdough",
             "price": 9.75
+          }
+        ]
+      },
+      {
+        "name": "COLD SANDWICHES",
+        "items": [
+          {
+            "name": "Turkey & Avocado with tomato",
+            "price": 7.95
+          },
+          {
+            "name": "Pub Club  turkey, bacon, lettuce, tomato",
+            "price": 9.25
+          },
+          {
+            "name": "Rare Roast Beef & Swiss sweet-hot mustard, lettuce, red onion",
+            "price": 9.25
+          },
+          {
+            "name": "Veggie  pepper jack, avocado, sprout, tomato",
+            "price": 9.25
           }
         ]
       },
@@ -166,14 +171,6 @@
             "price": 11.50
           }
         ]
-      },
-      {
-        "name": "Chili Relleno Stuffed with Jack Cheese & Corn Glazed Yam, Chayote Squash Succotash, Red Chili Sauce",
-        "price": 9.95
-      },
-      {
-        "name": "Pepita Crusted Salmon with Chipotle Glaze – chevre whipped yams, jicama slaw, tomatillo sauce",
-        "price": 10.95
       },
       {
         "name": "QUICHE",

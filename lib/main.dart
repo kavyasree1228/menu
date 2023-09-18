@@ -1,17 +1,17 @@
-import 'package:flutter/material.dart';
 import 'dart:convert';
+
+import 'package:flutter/material.dart';
+import 'package:menu/catagory_list_page.dart';
 
 void main() {
   runApp(MenuApp());
 }
 
 class MenuApp extends StatelessWidget {
-  const MenuApp({super.key});
-
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Restaurant Menu',
+      title: 'Web Restaurant Menu',
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
@@ -33,57 +33,34 @@ class MenuPage extends StatelessWidget {
           if (snapshot.connectionState == ConnectionState.done) {
             final menuData = json.decode(snapshot.data.toString());
             final categories = menuData['categories'];
-            return ListView.builder(
+            return ListView.separated(
               itemCount: categories.length,
               itemBuilder: (context, index) {
                 final category = categories[index];
-                return ListTile(
-                  title: Text(category['name']),
-                  subtitle: Text('${category['items'].length} items'),
-                  onTap: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => CategoryPage(category: category),
-                      ),
-                    );
-                  },
+                return Column(
+                  children: [
+                    ListTile(
+                      title: Text(category['name']),
+                      subtitle: Text('${category['items'].length} items'),
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) =>
+                                CategoryPage(category: category),
+                          ),
+                        );
+                      },
+                    ),
+                  ],
                 );
               },
+              separatorBuilder: (context, index) =>
+                  Divider(), // Add a separator line
             );
           } else {
             return CircularProgressIndicator(); // Loading indicator
           }
-        },
-      ),
-    );
-  }
-}
-
-class CategoryPage extends StatelessWidget {
-  final Map<String, dynamic> category;
-
-  CategoryPage({required this.category});
-
-  @override
-  Widget build(BuildContext context) {
-    final items = category['items'];
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(category['name']),
-      ),
-      body: ListView.builder(
-        itemCount: items.length,
-        itemBuilder: (context, index) {
-          final item = items[index];
-          return ListTile(
-            title: Text(item['name']),
-            subtitle: Text('\$${item['price']}'),
-            onTap: () {
-              // Handle item press here
-              print('Pressed: ${item['name']}');
-            },
-          );
         },
       ),
     );
